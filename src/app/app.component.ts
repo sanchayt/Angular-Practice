@@ -13,5 +13,5 @@ import { Component, NgModule } from '@angular/core';
 // `]
 })
 export class AppComponent {
-  // name = '';
+  // name1 = '';
 }
