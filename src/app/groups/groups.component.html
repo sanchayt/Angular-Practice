@@ -1,0 +1,43 @@
+   <!--
+        How to use .groups-widget
+
+        Style arguments:
+            width: Width of the widget
+            height: Height of the widget
+
+        JavaScript
+            Call `buildWidget` with data to display and an event
+            listener function. The event listener is called with
+            a CustomEvent object, which has a groupName and department attached under the detail property.
+    -->
+    <div class="groups-widget" style="width: 572px; height: 388px;">
+      <ul class="nav nav-pills justify-content-center departments" id="departments">
+          <li class="nav-item department">
+              <a class="nav-link" href="#{{departmentName}}" [class.active]="currentDepartment.departmentName === departmentName"  (click)='changeDepartment(departmentName)' *ngFor= "let departmentName of departments" >{{departmentName}}</a>
+          </li>
+      </ul>
+      <section class="carousel" id="carousel">
+          <!-- Try to just allow 2 at a time. Probabbly a refernce from Cafe -->
+          <div class="my-carousel-item card" *ngFor= "let group of currentDepartment.groups">
+              <div class="card-body">
+                  <h5 class="card-title">
+                      <span class="group-name">{{group.name}}</span>
+                  </h5>
+                  <p class="card-text">
+                      </p><p>
+                          <!-- Put stringify version of tags into that obj -->
+                          <span class="group-tags">{{group.tags}}</span>
+                      </p>
+                      <p>
+                          Member count:
+                          <span class="group-member-count">{{group.memberCount}}</span>
+                      </p>
+                  <p></p>
+                  <a href="#" class="btn btn-warning">Connect</a>
+              </div>
+          </div>
+      </section>
+  </div>
+  <section class="popup">
+
+  </section>

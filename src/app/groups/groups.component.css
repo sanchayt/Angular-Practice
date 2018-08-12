@@ -1,0 +1,21 @@
+.groups-widget {
+    margin: 16px auto;
+    border: 4px solid orange;
+    padding: 16px;
+}
+.carousel {
+    display: flex;
+    text-align: center;
+    flex: 2;
+    overflow-x: auto;
+}
+.my-carousel-item {
+    margin: 16px;
+    margin-left: 0;
+    min-width: 200px;
+    flex: 1;
+    cursor: pointer;
+}
+.my-carousel-item:first-child {
+    margin-left: 16px;
+}
