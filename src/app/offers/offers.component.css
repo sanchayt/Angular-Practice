@@ -1,0 +1,92 @@
+.box{
+    /* border-width: 1em;
+    border-color: black; */
+    background-color: transparent;
+    width: 100%;
+    /* color: orange; */
+    height: 220px;
+    border-radius: 0.7em;
+    padding: 0.5% 1% 0% 1.5%;
+    margin: 3%;
+}
+.title{
+    text-align: center;
+    width: 100%;
+    margin: 2%;
+    position: relative;
+}
+.description{
+    float: left;
+    border-width: 1em;
+    border-color: black;
+    /* background-color: rgb(207, 193, 193); */
+    width: 100%  !important;
+    height:100%;
+    border-radius: 0.5em;
+    padding: 0.5% 1% 0% 1.5%;
+    margin: 0.3%;
+}
+.Image{
+    position: relative;
+    border: black 2em;
+    float: right;
+    margin: 1%;
+    width: 20%;
+    height: 80%;
+   background-repeat  : no-repeat ;
+   background-size: cover;
+}
+.category{
+    padding: 0.5% 1% 0% 1.5%;
+    margin: 3%;
+    color: white;
+}
+
+.categories{
+    border: double 1em black;
+    padding: 2% 2% 2% 2%;
+    size: 1.5em;
+
+}
+#message {        
+    background-color: white; 
+    border: 1px solid white; 
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black, -1px -1px 5px white;
+    /* display: none;    */
+    height: auto;
+    margin: 0 auto; 
+    padding: 20px;
+    position: relative;      
+    top: 25%;
+    width: 50%;  
+    height: 50%;      
+    z-index: 200; 
+    cursor: copy;
+    color: black;
+
+}
+#overlay { 
+    background-color: rgba(20, 20, 20, 0.8); 
+    /* display: none; */
+    height: 100%;
+    left: 0; 
+    position: fixed;  
+    top: 0; 
+    width: 100%;
+    z-index: 1;      
+}
+button{
+    background-color: rgb(167, 84, 29);
+    color: white;
+    border: 1.5em white ;
+}
+.image_container{
+    width: 410px;
+    height: 200px;
+}
+.ws_images li{
+    width: 410px;
+    height: 200px;
+    
+}

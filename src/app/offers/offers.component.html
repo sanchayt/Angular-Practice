@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-4">
+      <!-- Category -->
+      <div class="container-float category">            
+        <div id="category" class="card float-left" style="width: 18rem;">
+            <div  id="categoriesList" class="list-group list-group-flush"  >
+              <!-- <td class="categories">{{CategoryName}}</td> -->
+              <!-- Try if it shows Categories -->
+              <div class="list-group-it:em" class="categories" (click)='changeCategory(CategoryName)' *ngFor="let CategoryName of categoryNames">{{CategoryName}}</div>
+             
+              </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6">
+      <!--Box of offers  -->
+      <div class="box float-right" id="offerModule">
+        <div class="container heading">
+          <div class="row align-content-space-evenly" style="display: none;">
+            <div class="col-auto"></div>
+            <div id="heading" class="col-10">
+              <!-- Title of offer -->
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col align-self-center">
+                      <h3 id="title" class="title"> {{offers.Name}}</h3>
+                    </div>
+                  </div>
+                </div>              
+            </div>
+            <div class="col-auto"></div>
+          </div>
+          <div class="row">
+            <div id="image-caption" class="col image_container">
+                
+                <!-- <iframe id="myframe" [src]='../../assets/Offers/travel.html' style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe> -->
+                <iframe id="myframe" [src]="currentUrl" style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe>
+                <!-- <iframe src="./merch.html" style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe> -->
+                <!-- <iframe id="myframe" src="./wowslider2.html" style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe> -->
+                <!-- <iframe id="myframe" src="./wowslider3.html" style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe> -->
+                <!-- <iframe id="myframe" src="./wowslider4.html" style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe> -->
+            </div>	
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Image/ -->
+      <div id="caption">
+        <div id="deal">
+          <button class="btnLocal btn btn-outline-warning" id="viewDealButton" value="View Deal">View Deal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-1"></div>
+  
+  
+  <div id="overlay" *ngIf="display" (click)="hide()">
+    <div id="message" (click)="hide()">
+      <!-- Put the thing you wanna display in light box -->
+        
+        <div class="card description" style="width: 18rem;">
+          <div class="card-body">
+            <h4 class="card-title">{{currentOfferToDisplay.Name}}</h4>
+            <!--h5 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+              <p class="card-text">{{currentOfferToDisplay.Description}}</p>
+              <a href="#" class="card-link" >{{currentOfferToDisplay.Contact.Phone}}</a>
+              <a href="#" class="card-link">{{currentOfferToDisplay.Contact.Email}}</a> 
+              <a href="{{currentOfferToDisplay.Links}}" class="card-link">Website</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script> -->
+    <!--script src="scripts/script.js"></script>-->
