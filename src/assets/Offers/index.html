@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Offers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="vendors/handlebars-v4.0.11.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="vendors/css/bootstrap.min.css" />
+    <script src="vendors/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    
+    
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+        <link rel="stylesheet" type="text/css" href="engine0/style.css" />
+        <!--script type="text/javascript" src="engine0/jquery.js"></script-->
+        <!-- End WOWSlider.com HEAD section --></head>
+        
+        <body>
+            <!-- Bla -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-4">
+                        <!-- Category -->
+                        <div class="container-float category">            
+                            <div id="category" class="card float-left" style="width: 18rem;">
+                                <script id="category-template" type="text/x-handlebars-template">
+                                    <ul  id="categoriesList" class="list-group list-group-flush">
+                                        <!-- <td class="categories">{{CategoryName}}</td> -->
+                                        
+                                        {{#each discounts}}
+                                        <li class="list-group-item" class="categories">{{CategoryName}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6">
+                        <!--Box of offers  -->
+                        <div class="box float-right" id="offerModule">
+                            <div class="container heading">
+                                <div class="row align-content-space-evenly" style="display: none;">
+                                    <div class="col-auto"></div>
+                                    <div id="heading" class="col-10">
+                                        <!-- Title of offer -->
+                                        <script id="heading-template" type="text/x-handlebars-template">
+                                            <div class="container">
+                                                <div class="row justify-content-center">
+                                                    <div class="col align-self-center">
+                                                        <h3 id="title" class="title"> {{Name}}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        
+                                    </div>
+                                    <div class="col-auto"></div>
+                                </div>
+                                <div class="row">
+                                    <div id="image-caption" class="col image_container">
+                                        <script id="caption-template" type="text/x-handlebars-template">
+                                            
+                                            <iframe id="myframe" src={{srcFile}} style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe>
+                                        <!-- <iframe src="./merch.html" style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe> -->
+                                        <!-- <iframe id="myframe" src="./wowslider2.html" style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe> -->
+                                        <!-- <iframe id="myframe" src="./wowslider3.html" style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe> -->
+                                        <!-- <iframe id="myframe" src="./wowslider4.html" style="width:100%;height:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe> -->
+                                        </script>  
+                                    </div>	
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <!-- Image/ -->
+                            <div id="caption">
+                                <div id="deal">
+                                    <button class="btnLocal btn btn-outline-warning" id="viewDealButton" value="View Deal">View Deal</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                    
+                </div>
+                <div id="overlay">
+                    <div id="message">
+                        <!-- Put the thing you wanna display in light box -->
+                        <script id="desc-template" type="text/x-handlebars-template">
+
+                        <div class="card description" style="width: 18rem;">
+                                <div class="card-body">
+                                <h4 class="card-title">{{Name}}</h4>
+                                {{!-- <h5 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
+                                {{#if Description}} 
+                                <p class="card-text">{{Description}}</p>
+                                {{/if}}
+                                {{#if Contact.Phone}} 
+                                <a href="#" class="card-link">{{Contact.Phone}}</a>
+                                 {{/if}}
+                                {{#if Contact.Email}} 
+                                <a href="#" class="card-link">{{Contact.Email}}</a>
+                                 {{/if}}
+                                {{#if Links}} 
+                                <a href="{{Links}}" class="card-link">Website</a>
+                                 {{/if}}
+                            </div>
+                        </div>
+{{!-- 
+                            <div class="description" >
+                                <h3>{{Name}}</h3>
+                                
+                                {{#if Description}} 
+                                <p></p>
+                                {{#if Contact.Phone}} 
+                                <p>{{Contact.Phone}}</p>
+                                {{/if}}
+                                {{#if Contact.Email}} 
+                                <p>{{Contact.Email}}</p>
+                                {{/if}}
+                                {{#if Links}} 
+                                <a href ="{{Links}}"> Website </a>
+                                {{/if}}
+                                
+                            </div> --}}
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="engine1/wowslider.js"></script>
+            <script type="text/javascript" src="engine1/script.js"></script>
+            <script src="scripts/script.js"></script>
+        </body>
+        
+        </html>
+        
